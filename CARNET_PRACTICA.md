@@ -56,3 +56,33 @@
 
 ### Probleme întâmpinate și rezolvări
 - Nicio problemă majoră
+
+---
+
+## Săptămâna 1 — Ziua 3 — 09.05.2026
+
+**Ore lucrate:** 4h  
+**Faza:** 3 — Frontend public  
+
+### Ce am făcut
+- Instalat TailwindCSS și Alpine.js
+- Configurat Vite pentru compilarea assets-urilor
+- Creat layout-ul principal al site-ului (navbar + footer)
+- Creat HomeController cu pagina principală
+- Creat CarController cu lista mașini și pagina de detaliu
+- Creat ExhibitorController cu lista expozanți și pagina de profil
+- Creat ProgramController cu programul evenimentului
+- Creat ContactController cu formularul de contact și validare
+- Configurat toate rutele în web.php
+- Creat toate view-urile Blade cu design dark mode
+
+### Ce am învățat
+- Cum funcționează TailwindCSS utility-first
+- Cum se creează controllere și view-uri în Laravel
+- Cum funcționează rutele în Laravel
+- Blade templating: @extends, @section, @yield, @foreach
+- Validare formulare cu Request și afișare erori
+
+### Probleme întâmpinate și rezolvări
+- Pagina Program apărea albă — VS Code nu salva corect fișierele .blade.php
+- Rezolvat prin rescrierea fișierului direct din terminal cu comanda `cat >`
