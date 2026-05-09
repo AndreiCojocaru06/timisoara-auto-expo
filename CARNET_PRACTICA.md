@@ -36,3 +36,23 @@
 - Token GitHub necesar în loc de parolă pentru autentificare din terminal
 
 ---
+
+## Săptămâna 1 — Ziua 2 — 09.05.2026
+
+**Ore lucrate:** 3h  
+**Faza:** 2 — Modelare date  
+
+### Ce am făcut
+- Am creat 5 migrări: categories, exhibitors, cars, car_images, contacts
+- Am definit modelele Eloquent cu relații între ele
+- Am creat Seeders cu date fictive (6 categorii, 4 expozanți, 4 mașini)
+- Am rulat `php artisan db:seed` și verificat datele cu Tinker
+
+### Ce am învățat
+- Cum funcționează migrările în Laravel
+- Relații Eloquent: hasMany, belongsTo
+- Ce sunt Seeders și cum populezi baza de date cu date de test
+- Cum verifici datele din DB cu `php artisan tinker`
+
+### Probleme întâmpinate și rezolvări
+- Nicio problemă majoră
