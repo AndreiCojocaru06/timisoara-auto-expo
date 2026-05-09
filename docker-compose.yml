@@ -1,0 +1,51 @@
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tae_app
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - .:/var/www
+    networks:
+      - tae_network
+    depends_on:
+      - db
+
+  nginx:
+    image: nginx:alpine
+    container_name: tae_nginx
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - tae_network
+    depends_on:
+      - app
+
+  db:
+    image: postgres:16-alpine
+    container_name: tae_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: tae_db
+      POSTGRES_USER: tae_user
+      POSTGRES_PASSWORD: secret
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - tae_network
+
+networks:
+  tae_network:
+    driver: bridge
+
+volumes:
+  pgdata:
