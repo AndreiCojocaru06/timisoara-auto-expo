@@ -61,7 +61,7 @@
 
 ## Săptămâna 1 — Ziua 3 — 14.05.2026
 
-**Ore lucrate:** 4h  
+**Ore lucrate:** 5h  
 **Faza:** 1 — Setup & Docker (continuare)  
 
 ### Ce am făcut
@@ -106,7 +106,7 @@
 
 ## Săptămâna 2 — Ziua 1 — 16.05.2026
 
-**Ore lucrate:** 4h  
+**Ore lucrate:** 5h  
 **Faza:** 2 — Modelare date (continuare)  
 
 ### Ce am făcut
@@ -114,6 +114,7 @@
 - Am definit relațiile între modele: hasMany, belongsTo
 - Am adăugat câmpurile `$fillable` pentru fiecare model
 - Am testat relațiile cu `php artisan tinker`
+- Am creat Seeders: CategorySeeder, ExhibitorSeeder, CarSeeder
 
 ### Ce am învățat
 - Relații Eloquent: hasMany, belongsTo
@@ -131,15 +132,16 @@
 **Faza:** 2 — Modelare date (continuare)  
 
 ### Ce am făcut
-- Am creat Seeders: CategorySeeder, ExhibitorSeeder, CarSeeder
 - Am configurat DatabaseSeeder să ruleze toate seeder-ele în ordine
 - Am populat baza de date cu `php artisan db:seed`
 - Am verificat datele cu Tinker: 6 categorii, 4 expozanți, 4 mașini
+- Am documentat schema bazei de date în README.md
 
 ### Ce am învățat
 - Ce sunt Seeders și cum populezi baza de date cu date de test
 - Ordinea contează la seeders — trebuie să existe categorii și expozanți înainte de mașini
 - Cum folosești `Str::slug()` pentru a genera slug-uri URL-friendly
+- Cum documentezi o schemă de baze de date
 
 ### Probleme întâmpinate și rezolvări
 - Nicio problemă majoră
@@ -148,80 +150,58 @@
 
 ## Săptămâna 2 — Ziua 3 — 21.05.2026
 
-**Ore lucrate:** 5h  
-**Faza:** 2 — Modelare date (continuare)  
-
-### Ce am făcut
-- Am studiat conceptul de Factory în Laravel
-- Am creat UserFactory și am testat generarea de date false cu Faker
-- Am documentat schema bazei de date în README.md
-- Am desenat diagrama relațiilor între tabele
-- Am studiat diferența dintre `migrate:fresh` și `migrate:refresh`
-
-### Ce am învățat
-- Cum funcționează Factories și Faker pentru generarea datelor de test
-- Comenzi utile: `migrate:fresh --seed`, `migrate:rollback`
-- Cum documentezi o schemă de baze de date
-
-### Probleme întâmpinate și rezolvări
-- Nicio problemă majoră
-
----
-
-## Săptămâna 3 — Ziua 1 — 23.05.2026
-
-**Ore lucrate:** 5h  
+**Ore lucrate:** 6h  
 **Faza:** 3 — Frontend public  
 
 ### Ce am făcut
 - Am instalat TailwindCSS și Alpine.js cu npm
 - Am configurat Vite pentru compilarea assets-urilor
 - Am adăugat Node.js în Dockerfile și rebuildat containerul
-- Am studiat documentația TailwindCSS
 - Am creat layout-ul principal al site-ului cu navbar și footer
+- Am creat HomeController și view-ul homepage cu hero banner, categorii, mașini featured
 
 ### Ce am învățat
 - Cum funcționează TailwindCSS utility-first
 - Cum se configurează Vite cu Laravel
 - Diferența dintre `npm run dev` și `npm run build`
-- Cum structurezi un layout reutilizabil în Laravel
+- Blade templating: @extends, @section, @yield
 
 ### Probleme întâmpinate și rezolvări
 - Containerul PHP nu avea Node.js — rezolvat prin adăugarea în Dockerfile și rebuild
 
 ---
 
-## Săptămâna 3 — Ziua 2 — 26.05.2026
+## Săptămâna 3 — Ziua 1 — 23.05.2026
 
-**Ore lucrate:** 5h  
+**Ore lucrate:** 6h  
 **Faza:** 3 — Frontend public (continuare)  
 
 ### Ce am făcut
-- Am creat HomeController și view-ul homepage
-- Am implementat secțiunile: hero banner, categorii, mașini featured, expozanți
 - Am creat CarController cu lista mașini și pagina de detaliu
 - Am implementat filtrare după categorie cu query string
+- Am creat view-urile cars/index.blade.php și cars/show.blade.php
+- Am implementat paginare cu `paginate(12)`
 
 ### Ce am învățat
-- Blade templating: @extends, @section, @yield, @foreach
 - Cum funcționează rutele în Laravel: GET, POST, parametri dinamici
 - Cum filtrezi query-uri cu `when()` în Eloquent
 - Eager loading cu `with()` pentru a evita problema N+1
+- Cum funcționează paginarea în Laravel
 
 ### Probleme întâmpinate și rezolvări
 - Nicio problemă majoră
 
 ---
 
-## Săptămâna 3 — Ziua 3 — 28.05.2026
+## Săptămâna 3 — Ziua 2 — 26.05.2026
 
-**Ore lucrate:** 5h  
+**Ore lucrate:** 6h  
 **Faza:** 3 — Frontend public (continuare)  
 
 ### Ce am făcut
 - Am creat ExhibitorController cu lista expozanți și pagina de profil
 - Am creat view-urile exhibitors/index.blade.php și exhibitors/show.blade.php
-- Am implementat `withCount('cars')` pentru a afișa numărul de mașini per expozant
+- Am implementat `withCount('cars')` pentru numărul de mașini per expozant
 - Am creat ProgramController cu programul evenimentului pe 3 zile
 
 ### Ce am învățat
@@ -234,7 +214,7 @@
 
 ---
 
-## Săptămâna 4 — Ziua 1 — 02.06.2026
+## Săptămâna 3 — Ziua 3 — 28.05.2026
 
 **Ore lucrate:** 6h  
 **Faza:** 3 — Frontend public (continuare)  
@@ -244,7 +224,6 @@
 - Am creat view-urile program.blade.php și contact.blade.php
 - Am configurat toate rutele în `web.php`
 - Am testat toate paginile în browser
-- Am rezolvat problema cu view-ul Program
 
 ### Ce am învățat
 - Validare formulare cu `$request->validate()`
@@ -257,7 +236,7 @@
 
 ---
 
-## Săptămâna 4 — Ziua 2 — 04.06.2026
+## Săptămâna 4 — Ziua 1 — 02.06.2026
 
 **Ore lucrate:** 6h  
 **Faza:** 3 — Frontend public (continuare)  
@@ -266,8 +245,7 @@
 - Am rafinat design-ul tuturor paginilor
 - Am verificat că site-ul e responsive pe mobil
 - Am testat formularul de contact end-to-end
-- Am verificat că datele din formular se salvează corect în baza de date
-- Am făcut code review și curățat codul
+- Am optimizat query-urile Eloquent
 - Am urcat tot codul pe GitHub cu commit-uri descriptive
 
 ### Ce am învățat
@@ -275,6 +253,114 @@
 - Cum verifici datele salvate în DB cu Tinker
 - Principii de responsive design cu TailwindCSS
 - Bune practici pentru commit messages în Git
+
+### Probleme întâmpinate și rezolvări
+- Nicio problemă majoră
+
+---
+
+## Săptămâna 5 — Ziua 1 — 09.06.2026
+
+**Ore lucrate:** 5h  
+**Faza:** 4 — Admin Panel  
+
+### Ce am făcut
+- Am instalat Laravel Breeze pentru autentificare
+- Am creat userul admin în baza de date cu `php artisan tinker`
+- Am creat și configurat AdminMiddleware pentru protecția rutelor
+- Am înregistrat middleware-ul în `bootstrap/app.php`
+- Am creat rutele admin grupate cu prefix și middleware
+
+### Ce am învățat
+- Cum funcționează autentificarea în Laravel cu Breeze
+- Ce este un Middleware și cum protejezi rutele
+- Cum grupezi rutele cu prefix și middleware în `web.php`
+
+### Probleme întâmpinate și rezolvări
+- bootstrap.js lipsea după instalarea Breeze — rezolvat manual prin creare și instalare axios
+
+---
+
+## Săptămâna 5 — Ziua 2 — 11.06.2026
+
+**Ore lucrate:** 5h  
+**Faza:** 4 — Admin Panel (continuare)  
+
+### Ce am făcut
+- Am creat DashboardController cu statistici: mașini, expozanți, categorii, mesaje
+- Am creat Admin CarController cu CRUD complet
+- Am creat formulare create și edit pentru mașini
+- Am creat layout-ul admin cu sidebar și navigare
+
+### Ce am învățat
+- Cum structurezi controllere în subfoldere: `Admin/CarController`
+- CRUD complet: Create, Read, Update, Delete
+- Cum folosești `@method('PUT')` și `@method('DELETE')` în formulare Blade
+
+### Probleme întâmpinate și rezolvări
+- Nicio problemă majoră
+
+---
+
+## Săptămâna 5 — Ziua 3 — 13.06.2026
+
+**Ore lucrate:** 5h  
+**Faza:** 4 — Admin Panel (continuare)  
+
+### Ce am făcut
+- Am creat Admin ExhibitorController cu CRUD complet
+- Am creat formulare create și edit pentru expozanți
+- Am creat Admin ContactController pentru inbox mesaje
+- Am creat view-urile admin pentru expozanți și contacte
+
+### Ce am învățat
+- Cum construiești un layout admin cu sidebar în Blade
+- Cum afișezi mesaje flash de succes după acțiuni CRUD
+- Cum marchezi mesajele ca citite automat la vizualizare
+
+### Probleme întâmpinate și rezolvări
+- Modelul Contact lipsea — rezolvat cu `php artisan make:model Contact`
+
+---
+
+## Săptămâna 6 — Ziua 1 — 16.06.2026
+
+**Ore lucrate:** 5h  
+**Faza:** 4 — Admin Panel (continuare)  
+
+### Ce am făcut
+- Am testat toate funcționalitățile CRUD din panoul admin
+- Am adăugat o mașină nouă din admin și am verificat că apare pe site
+- Am editat și șters mașini din admin
+- Am testat inbox-ul de mesaje
+- Am rafinat design-ul panoului de administrare
+
+### Ce am învățat
+- Importanța testării end-to-end a funcționalităților
+- Cum verifici că datele se propagă corect între admin și site-ul public
+- Debugging în Laravel cu mesaje de eroare descriptive
+
+### Probleme întâmpinate și rezolvări
+- Nicio problemă majoră
+
+---
+
+## Săptămâna 6 — Ziua 2 — 18.06.2026
+
+**Ore lucrate:** 5h  
+**Faza:** 4 — Admin Panel (continuare)  
+
+### Ce am făcut
+- Am securizat toate rutele admin cu middleware auth și admin
+- Am testat că un utilizator neautentificat nu poate accesa `/admin`
+- Am verificat că logout funcționează corect
+- Am urcat tot codul pe GitHub cu commit-uri descriptive
+- Am actualizat README.md cu instrucțiuni pentru admin panel
+
+### Ce am învățat
+- Cum testezi securitatea rutelor în Laravel
+- Importanța protejării rutelor sensibile cu middleware
+- Bune practici de documentare pentru panouri de administrare
 
 ### Probleme întâmpinate și rezolvări
 - Nicio problemă majoră
