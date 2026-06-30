@@ -514,3 +514,25 @@
 
 ### Probleme întâmpinate și rezolvări
 - Nicio problemă majoră
+
+---
+
+## Săptămâna 9 — Ziua 1 — 07.07.2026
+
+**Ore lucrate:** 5h  
+**Faza:** 6 — Polish, Testing & Deploy (continuare)  
+
+### Ce am făcut
+- Am cercetat opțiuni de deploy: Railway.app, Fly.io, Laravel Forge
+- Am pregătit proiectul pentru deploy (variabile de mediu, configurare producție)
+- Am verificat că toate testele trec într-un mediu curat
+- Am făcut code review final al întregului proiect
+- Am pregătit prezentarea proiectului pentru predare
+
+### Ce am învățat
+- Diferențele dintre platformele de hosting pentru aplicații Laravel
+- Cum pregătești o aplicație Laravel pentru producție
+- Importanța unui code review final înainte de predare
+
+### Probleme întâmpinate și rezolvări
+- Nicio problemă majoră
