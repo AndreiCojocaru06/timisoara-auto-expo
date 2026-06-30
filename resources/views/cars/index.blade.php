@@ -28,20 +28,25 @@
             {{-- Grid mașini --}}
             <div class="grid md:grid-cols-3 gap-6">
                 @forelse($cars as $car)
-                    <a href="/masini/{{ $car->slug }}"
-                       class="group bg-gray-900 border border-gray-800 hover:border-emerald-500/50 rounded-2xl overflow-hidden transition">
-                        <div class="h-48 bg-gray-800 flex items-center justify-center">
-                            <span class="text-6xl">🚗</span>
-                        </div>
-                        <div class="p-5">
-                            <div class="text-xs text-emerald-400 font-mono mb-1">{{ $car->category->name }}</div>
-                            <h3 class="text-lg font-bold text-white mb-1">{{ $car->brand }} {{ $car->model }}</h3>
-                            <p class="text-gray-400 text-sm mb-3">{{ $car->year }} · {{ $car->fuel_type }} · {{ $car->horsepower }}cp</p>
-                            @if($car->price)
-                                <p class="text-emerald-400 font-semibold">€ {{ number_format($car->price, 0, ',', '.') }}</p>
-                            @endif
-                        </div>
-                    </a>
+                    <div class="group bg-gray-900 border border-gray-800 hover:border-emerald-500/50 rounded-2xl overflow-hidden transition">
+    <a href="/masini/{{ $car->slug }}">
+        <div class="h-48 bg-gray-800 flex items-center justify-center">
+            <span class="text-6xl">🚗</span>
+        </div>
+        <div class="p-5">
+            <div class="text-xs text-emerald-400 font-mono mb-1">{{ $car->category->name }}</div>
+            <h3 class="text-lg font-bold text-white mb-1">{{ $car->brand }} {{ $car->model }}</h3>
+            <p class="text-gray-400 text-sm mb-3">{{ $car->year }} · {{ $car->fuel_type }} · {{ $car->horsepower }}cp</p>
+            @if($car->price)
+                <p class="text-emerald-400 font-semibold">€ {{ number_format($car->price, 0, ',', '.') }}</p>
+            @endif
+        </div>
+    </a>
+    <form method="POST" action="/compare/{{ $car->id }}" class="px-5 pb-5">
+        @csrf
+        <button type="submit" class="text-xs text-gray-400 hover:text-emerald-400 transition">+ Adauga la comparare</button>
+    </form>
+</div>
                 @empty
                     <p class="text-gray-400 col-span-3">Nicio mașină găsită.</p>
                 @endforelse

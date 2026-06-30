@@ -7,6 +7,7 @@ use App\Http\Controllers\ExhibitorController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\CompareController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CarController as AdminCarController;
 use App\Http\Controllers\Admin\ExhibitorController as AdminExhibitorController;
@@ -22,6 +23,10 @@ Route::get('/program', [ProgramController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
 Route::post('/contact', [ContactController::class, 'store']);
 Route::get('/search', [SearchController::class, 'index']);
+
+Route::get('/compare', [CompareController::class, 'index']);
+Route::post('/compare/{car}', [CompareController::class, 'add']);
+Route::delete('/compare/{car}', [CompareController::class, 'remove']);
 
 // Rute admin
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {

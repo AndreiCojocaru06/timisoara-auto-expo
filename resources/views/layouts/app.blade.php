@@ -20,6 +20,7 @@
             <a href="/program" class="hover:text-white transition">Program</a>
             <a href="/contact" class="hover:text-white transition">Contact</a>
             <a href="/search" class="hover:text-white transition">🔍 Caută</a>
+            <a href="/compare" class="hover:text-white transition">⚖️ Compară</a>
 </div>
         </div>
     </nav>
