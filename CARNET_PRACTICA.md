@@ -364,3 +364,153 @@
 
 ### Probleme întâmpinate și rezolvări
 - Nicio problemă majoră
+
+---
+
+## Săptămâna 6 — Ziua 3 — 20.06.2026
+
+**Ore lucrate:** 5h  
+**Faza:** 5 — Feature-uri avansate  
+
+### Ce am făcut
+- Am creat SearchController pentru căutare live mașini
+- Am implementat căutare după brand, model, culoare, combustibil
+- Am combinat căutarea cu filtrarea după categorie
+- Am creat view-ul search.blade.php cu paginare
+
+### Ce am învățat
+- Cum implementezi căutare cu `ilike` pentru PostgreSQL
+- Cum combini mai multe filtre opționale cu `when()`
+- Cum păstrezi parametrii de query în linkuri de paginare
+
+### Probleme întâmpinate și rezolvări
+- Nicio problemă majoră
+
+---
+
+## Săptămâna 7 — Ziua 1 — 23.06.2026
+
+**Ore lucrate:** 5h  
+**Faza:** 5 — Feature-uri avansate (continuare)  
+
+### Ce am făcut
+- Am creat CompareController pentru compararea mașinilor
+- Am implementat stocarea ID-urilor în sesiune (max 3 mașini)
+- Am creat view-ul compare.blade.php cu tabel comparativ
+- Am adăugat butonul "Adaugă la comparare" pe pagina de listă mașini
+
+### Ce am învățat
+- Cum folosești sesiunea Laravel pentru date temporare
+- Cum construiești un tabel comparativ dinamic în Blade
+- Diferența între stocarea în sesiune și în baza de date
+
+### Probleme întâmpinate și rezolvări
+- Nicio problemă majoră
+
+---
+
+## Săptămâna 7 — Ziua 2 — 25.06.2026
+
+**Ore lucrate:** 5h  
+**Faza:** 5 — Feature-uri avansate (continuare)  
+
+### Ce am făcut
+- Am creat migrarea pentru tabela pivot car_user
+- Am adăugat relația many-to-many `favoriteCars()` în modelul User
+- Am adăugat relația inversă `favoritedBy()` în modelul Car
+- Am creat FavoriteController cu metoda toggle
+
+### Ce am învățat
+- Cum funcționează relațiile many-to-many cu `belongsToMany()`
+- Cum folosești `attach()` și `detach()` pentru tabele pivot
+- Cum verifici dacă o relație există cu `contains()`
+
+### Probleme întâmpinate și rezolvări
+- Nicio problemă majoră
+
+---
+
+## Săptămâna 7 — Ziua 3 — 27.06.2026
+
+**Ore lucrate:** 5h  
+**Faza:** 5 — Feature-uri avansate (continuare)  
+
+### Ce am făcut
+- Am creat pagina my-favorites cu lista mașinilor salvate
+- Am adăugat butonul de favorite pe pagina de detaliu mașină
+- Am protejat rutele de favorite cu middleware auth
+- Am adăugat linkurile Caută, Compară și Favorite în navbar
+- Am testat toate funcționalitățile avansate end-to-end
+
+### Ce am învățat
+- Cum protejezi rute care necesită autentificare
+- Cum afișezi conținut condiționat cu `@auth` și `@endauth`
+- Importanța testării manuale pentru funcționalități interactive
+
+### Probleme întâmpinate și rezolvări
+- Nicio problemă majoră
+
+---
+
+## Săptămâna 8 — Ziua 1 — 30.06.2026
+
+**Ore lucrate:** 4h  
+**Faza:** 6 — Polish, Testing & Deploy  
+
+### Ce am făcut
+- Am scris teste pentru homepage (HomepageTest)
+- Am scris teste pentru mașini (CarsTest) — listă, detaliu, 404
+- Am scris teste pentru formularul de contact (ContactTest)
+- Am scris teste pentru securitatea panoului admin (AdminAccessTest)
+
+### Ce am învățat
+- Cum scrii feature tests cu PHPUnit în Laravel
+- Cum folosești `RefreshDatabase` pentru o bază de date curată la fiecare test
+- Cum testezi validarea formularelor cu `assertSessionHasErrors`
+- Cum testezi redirect-uri și statusuri HTTP
+
+### Probleme întâmpinate și rezolvări
+- Nicio problemă majoră
+
+---
+
+## Săptămâna 8 — Ziua 2 — 02.07.2026
+
+**Ore lucrate:** 4h  
+**Faza:** 6 — Polish, Testing & Deploy (continuare)  
+
+### Ce am făcut
+- Am rulat toate testele cu `php artisan test`
+- Am eliminat testele implicite Laravel care nu erau relevante pentru proiect
+- Am verificat că toate cele 31 de teste trec
+- Am optimizat câteva query-uri Eloquent cu eager loading
+
+### Ce am învățat
+- Importanța unui set curat de teste relevante pentru proiect
+- Cum identifici și elimini query-uri N+1
+- Cum interpretezi rezultatele PHPUnit (passed, failed, risky)
+
+### Probleme întâmpinate și rezolvări
+- Testele implicite ProfileTest și ExampleTest eșuau pentru funcționalități neimplementate — eliminate din suite
+
+---
+
+## Săptămâna 8 — Ziua 3 — 04.07.2026
+
+**Ore lucrate:** 5h  
+**Faza:** 6 — Polish, Testing & Deploy (continuare)  
+
+### Ce am făcut
+- Am scris README.md complet: descriere, tech stack, instalare, structura bazei de date
+- Am documentat arhitectura aplicației (Browser → Nginx → PHP-FPM → PostgreSQL)
+- Am documentat contul de admin de test pentru evaluatori
+- Am revizuit tot codul proiectului pentru curățenie
+- Am făcut commit-urile finale pe GitHub
+
+### Ce am învățat
+- Importanța unei documentații tehnice clare pentru un proiect predabil
+- Cum structurezi un README profesional
+- Bune practici finale de code review
+
+### Probleme întâmpinate și rezolvări
+- Nicio problemă majoră
