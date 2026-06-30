@@ -27,4 +27,8 @@ class Car extends Model
     {
         return $this->hasMany(CarImage::class)->orderBy('order');
     }
+    public function favoritedBy()
+    {
+    return $this->belongsToMany(User::class, 'car_user');
+    }   
 }

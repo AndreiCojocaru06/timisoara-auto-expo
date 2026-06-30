@@ -21,6 +21,9 @@
             <a href="/contact" class="hover:text-white transition">Contact</a>
             <a href="/search" class="hover:text-white transition">🔍 Caută</a>
             <a href="/compare" class="hover:text-white transition">⚖️ Compară</a>
+            @auth
+             <a href="/my-favorites" class="hover:text-white transition">♥ Favorite</a>
+            @endauth
 </div>
         </div>
     </nav>

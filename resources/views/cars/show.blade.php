@@ -30,8 +30,21 @@
                     <p class="text-gray-400 mb-6">{{ $car->year }} · {{ $car->exhibitor->name }}</p>
 
                     @if($car->price)
-                        <p class="text-3xl font-bold text-emerald-400 mb-8">€ {{ number_format($car->price, 0, ',', '.') }}</p>
-                    @endif
+    <p class="text-3xl font-bold text-emerald-400 mb-4">€ {{ number_format($car->price, 0, ',', '.') }}</p>
+@endif
+
+@auth
+    <form method="POST" action="/favorites/{{ $car->id }}" class="mb-8">
+        @csrf
+        <button type="submit" class="flex items-center gap-2 text-sm border border-gray-700 hover:border-red-400 text-gray-300 hover:text-red-400 px-4 py-2 rounded-lg transition">
+            ♥ {{ auth()->user()->favoriteCars->contains($car->id) ? 'Elimina din favorite' : 'Adauga la favorite' }}
+        </button>
+    </form>
+@else
+    <p class="mb-8 text-sm text-gray-500">
+        <a href="/login" class="text-emerald-400 hover:underline">Conecteaza-te</a> pentru a salva la favorite
+    </p>
+@endauth
 
                     {{-- Specificații --}}
                     <div class="grid grid-cols-2 gap-3">
